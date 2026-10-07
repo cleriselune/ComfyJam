@@ -15,7 +15,7 @@ public class Blink : MonoBehaviour
     void Update()
     {
         keyboard = Keyboard.current; // get the current keyboard input
-        if (keyboard.eKey.wasPressedThisFrame){
+        if (keyboard.bKey.wasPressedThisFrame){
             
             canvas.enabled = !canvas.enabled; // toggle the canvas visibility
             gameObject.tag = canvas.enabled ? "Blink" : "Player"; // change the tag based on the canvas visibility

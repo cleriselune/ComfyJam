@@ -17,4 +17,22 @@ public class Inventory : MonoBehaviour
         Debug.Log("inventory contains: " + items.Length + " items");
     }
 
+    public bool HasItem(GameObject item)
+    {
+        return items.Contains(item);
+    }
+
+    public void RemoveItemFromInventory(GameObject item)
+    {
+        if (HasItem(item))
+        {
+            items = items.Where(i => i != item).ToArray();
+            Debug.Log("item removed from inventory: " + item.name);
+        }
+        else
+        {
+            Debug.LogWarning("item not found in inventory: " + item.name);
+        }
+    }
+
 }

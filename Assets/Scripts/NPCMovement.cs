@@ -5,6 +5,7 @@ public class NPCMovement : MonoBehaviour
 {
     [SerializeField] Transform destination;
     private NavMeshAgent agent;
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,5 +25,11 @@ public class NPCMovement : MonoBehaviour
         Vector3 destinationPosition = destination.transform.position;
         agent.SetDestination(destinationPosition);
     }
+
+    public void LeaveShop()
+    {
+        
+    }
+
 }
  
