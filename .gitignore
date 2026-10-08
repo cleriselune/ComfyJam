@@ -2,6 +2,9 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+# ASSETS FROM UNITY STORE; LINK TO IT IN READ ME
+Assets/polyperfect
+
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/

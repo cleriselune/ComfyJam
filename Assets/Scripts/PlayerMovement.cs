@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     Camera cam;
 
     public float speed = 10f;
+    public float sprintSpeed = 20f;
     Vector2 moveVector;
     Vector3 moveDirection;
     public InputAction moveInput;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         HandleMovement(moveVector);
         HandleLooking(mouseVector);
+        
     }
 
     private void HandleMovement(Vector2 moveVector)
@@ -50,6 +52,14 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = (forward * moveVector.y + right * moveVector.x).normalized;
         moveDirection.y = oldY;
 
+
+        if (Keyboard.current.leftShiftKey.isPressed)
+        {
+            speed = 20f;
+        } else
+        {
+            speed = 10f;
+        }
         // apply the movement to the rigidbody's velocity
         rb.linearVelocity = moveDirection * speed;
     }
@@ -66,5 +76,6 @@ public class PlayerMovement : MonoBehaviour
         // rotate the player object around the y-axis based on the mouse input
         transform.rotation *= Quaternion.Euler(0f, mouseDelta.x * LookSensitivity, 0f);
     }
+
 
 }
